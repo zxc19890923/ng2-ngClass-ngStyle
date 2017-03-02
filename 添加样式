@@ -1,0 +1,24 @@
+1、ngStyle
+
+基本用法
+
+<div [ngStyle]="{'background-color':'green'}"></<div>
+判断添加<div [ngStyle]="{'background-color':username === 'zxc' ? 'green' : 'red' }"></<div>
+
+2、ngClass第一个参数为类名称，第二个参数为boolean值，如果为true就添加第一个参数的类
+
+基本用法
+
+[ngClass]="{'text-success':true}"
+判断
+
+[ngClass]="{'text-success':username == 'zxc'}"
+[ngClass]="{'text-success':index == 0}"
+3、例子循环显示的第一行添加text-danger样式，文字变红色
+
+const arr = [1, 3, 4, 5, 6]
+<ul>
+    <li *ngFor="let item of arr, let i = index">
+        <span [ngClass]="{'text-danger': i==0}">{{item}}</span>
+    </li>
+</ul>
